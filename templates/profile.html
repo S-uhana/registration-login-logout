@@ -1,0 +1,16 @@
+{% extends 'Index.html'%}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<h2>{% block title %}Profile {% endblock %}</h2>
+<p>Username:{{ user}}</p>
+<p>Email: {{ user.email }}</p>
+
+{% else %}
+
+<p>Login to view your details</p>
+
+{% endif %}
+{% endblock %}

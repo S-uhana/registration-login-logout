@@ -1,0 +1,38 @@
+<h1>Registration form</h1>
+<hr/>
+<form method="POST">
+    {% csrf_token %}
+<table border="1">
+ <tr>
+    <td>Username</td>
+    <td><input type ="text" placeholder="Enter Username"name="Username" required></td>
+ </tr>
+ <tr>
+    <td>Email</td>
+    <td><input type ="text" placeholder="Enter Email"name="Email" required></td>
+ </tr>
+ <tr>
+    <td>Pwd</td>
+    <td><input type ="password" placeholder="Enter Password"name="Pwd" required></td>
+ </tr>
+ <tr>
+    <td>Confirm Password</td>
+    <td><input type ="text" placeholder="Enter Password"name="Confirmpwd" required></td>
+ </tr>
+ <tr>
+    <td>Address</td>
+    <td><input type ="text" placeholder="Enter Address"name="Address" required></td>
+ </tr>
+ <tr>
+     <td></td>
+     <td><button type=s"submit" >Registration</button></td>
+ </tr>
+</table>
+{% if messages %}
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor %}
+{% endif %}
+<hr/>
+<em>If you Already amember <a href="{% url 'Loginpage' %}">Login</a></em>
+</form>
